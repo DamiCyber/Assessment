@@ -68,11 +68,13 @@ const Login = () => {
             <h1>Laptop4Developers</h1>
           </div>
           <div className="login">
-            <div className="formField" onSubmit={handleSubmit}>
+            <form className="formField" onSubmit={handleSubmit}>
+              <span>{errors.username}</span>
               <input type="text" onChange={handleChange} name="username" value={values.username} id="username" />
-              <input type="password" onChange={handleChange} name="password" value={values.password} id="password" />
+              <span>{errors.pass}</span>
+              <input class="inpu" onChange={handleChange} name="password" value={values.password} type="password" id="password" />
               <button type='submit'>Login</button>
-            </div>
+            </form>
           </div>
         </div>
         <div className="ads"></div>
