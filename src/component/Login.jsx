@@ -18,7 +18,8 @@ const firebaseConfig = {
 
 // Initialize Firebase
 const app = initializeApp(firebaseConfig);
-
+const auth = getAuth();
+const provider = new GoogleAuthProvider();
 
 const Login = () => {
 
@@ -36,18 +37,40 @@ const Login = () => {
       console.log(values);
     }
   })
+  const googleIn = () => {
+    signInWithPopup(auth, provider)
+    .then((result) => {
+      // Handle successful sign-in
+      console.log(result.user);
+      setPasswordError("")
+     
+      setTimeout(() => {
+        // navigate('/dashboard')
+      }, 1000);
+    })
+    .catch((error) => {
+      // Handle errors
+      console.log(error.code);
+      if (error.code === "auth/internal-error") {
+          console.log("Internal Error");
+      } else {
+       
+      }
+    });
+  }
   return (
     <div>
       <div className="bigslash">
-        <button onclick={googleIn} >connect with google</button>
+       
         <div className="to-give">
+        <button onClick={googleIn} >connect with google</button>
           <div className="logo">
             <h1>Laptop4Developers</h1>
           </div>
           <div className="login">
             <div className="formField" onSubmit={handleSubmit}>
-              <input type="text" onChange={handleChange} name="username" value={values.username} id="username"/>
-              <input type="password" onChange={handleChange} name="password" value={values.password} id="password"/>
+              <input type="text" onChange={handleChange} name="username" value={values.username} id="username" />
+              <input type="password" onChange={handleChange} name="password" value={values.password} id="password" />
               <button type='submit'>Login</button>
             </div>
           </div>
