@@ -1,0 +1,39 @@
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+.bigslash{
+    display: flex;
+    margin: auto;
+    gap: 40px;
+    margin-top: 45px;
+    width: 800px;
+    height: 500px;
+}
+.login{
+    margin: auto;
+    width: 400px;
+    height: 500px;
+}
+.ads{
+    background-color: purple;
+    margin: auto;
+    width: 400px;
+    height: 500px;
+}
+.formField{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+   
+}
+.formField input{
+    width: 400px;
+    margin: 15px;
+    height: 30px;
+}
+.formField button{
+    width: 400px;
+    height: 30px;
+}
