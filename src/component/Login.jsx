@@ -4,9 +4,12 @@ import * as yup from "yup"
 import { useFormik } from 'formik'
 import { initializeApp } from 'firebase/app';
 import { getAuth, signInWithPopup, GoogleAuthProvider } from 'firebase/auth';
-
-
-
+import logo from "../assets/image/Group 2.png"
+import gogLogo from "../assets/image/gogLogo.png"
+import or from "../assets/image/or.png"
+import chrome from "../assets/image/chrome.png"
+import fire from "../assets/image/firefox.png"
+import expo from "../assets/image/expo.png"
 const firebaseConfig = {
   apiKey: "AIzaSyCsTVkHrRraCfKG07b-vPlebvtyp8dqfcE",
   authDomain: "assessment-accda.firebaseapp.com",
@@ -39,45 +42,79 @@ const Login = () => {
   })
   const googleIn = () => {
     signInWithPopup(auth, provider)
-    .then((result) => {
-      // Handle successful sign-in
-      console.log(result.user);
-      setPasswordError("")
-     
-      setTimeout(() => {
-        // navigate('/dashboard')
-      }, 1000);
-    })
-    .catch((error) => {
-      // Handle errors
-      console.log(error.code);
-      if (error.code === "auth/internal-error") {
+      .then((result) => {
+        // Handle successful sign-in
+        console.log(result.user);
+        setPasswordError("")
+
+        setTimeout(() => {
+          // navigate('/dashboard')
+        }, 1000);
+      })
+      .catch((error) => {
+        // Handle errors
+        console.log(error.code);
+        if (error.code === "auth/internal-error") {
           console.log("Internal Error");
-      } else {
-       
-      }
-    });
+        } else {
+
+        }
+      });
   }
   return (
     <div>
       <div className="bigslash">
-       
+
         <div className="to-give">
-        <button onClick={googleIn} >connect with google</button>
           <div className="logo">
-            <h1>Laptop4Developers</h1>
+            <img src={logo} alt="" />
+          </div>
+          <div className="google">
+            <button onClick={googleIn} ><img src={gogLogo} alt="" /> Sign In with Google</button>
+          </div>
+          <div className="or">
+            <img src={or} alt="" />
           </div>
           <div className="login">
             <form className="formField" onSubmit={handleSubmit}>
+              <label htmlFor="username">Full Name</label>
               <span>{errors.username}</span>
               <input type="text" onChange={handleChange} name="username" value={values.username} id="username" />
+              <label htmlFor="password">Password</label>
               <span>{errors.pass}</span>
               <input class="inpu" onChange={handleChange} name="password" value={values.password} type="password" id="password" />
-              <button type='submit'>Login</button>
+              <div className="agree">
+                <input type="checkbox" class="check" />
+                <div className="words">
+                  <p>I agree to the processing of my personal data (name and password) for the purpose of conducting the assessment. Read Privacy Policy to know more.</p>
+                </div>
+              </div>
+              <button type='submit' className='btn'>Sign In</button>
             </form>
           </div>
         </div>
-        <div className="ads"></div>
+        <div className="ads">
+          <div className="first-para">
+            <h4>Give your best shot while answering the questions</h4>
+          </div>
+          <div className="small">
+            <p>Wish you the best in it.</p>
+          </div>
+          <div className="browse">
+            <p>Browser Compatibility works best with</p>
+          </div>
+          <div className="images">
+            <img src={chrome} alt="" />
+            <img src={fire} alt="" />
+            <img src={expo} alt="" />
+          </div>
+          <div className="network">
+            <p>Network Speed</p>
+          </div>
+          <div className="para">
+            <p>Check if you have a decent internet speed. This can be done by logging into your email account. A decent internet connection should enable you to lgin within seconds.</p>
+          </div>
+        </div>
       </div>
     </div>
   )

@@ -6,21 +6,32 @@
 .bigslash{
     display: flex;
     margin: auto;
-    gap: 40px;
-    margin-top: 45px;
+    margin-top: 15px;
     width: 800px;
-    height: 500px;
+    height: 570px;
+}
+.logo{
+    padding: 30px;
+}
+.logo img{
+    width: 180px;
+}
+body{
+    height: 93vh;
+    background-color:rgba(192, 187, 187, 0.513) ;
+}
+.to-give{
+    background-color: white;
+    height: 590px;
 }
 .login{
-    margin: auto;
     width: 400px;
-    height: 500px;
 }
 .ads{
-    background-color: purple;
-    margin: auto;
-    width: 400px;
-    height: 500px;
+    background-color:#08342B;
+    color: white;
+    width: 500px;
+    height: 590px;
 }
 .formField{
     display: flex;
@@ -29,11 +40,80 @@
    
 }
 .formField input{
-    width: 400px;
+    width: 340px;
     margin: 15px;
-    height: 30px;
+    height: 40px;
+    border-radius: 10px;
 }
 .formField button{
-    width: 400px;
-    height: 30px;
+    background-color: #0A9C7D;
+    color: white;
+    font-weight: 700;
+    border-radius: 7px;
+    border: none;
+    width: 340px;
+    cursor: pointer;
+    height: 40px;
+}
+.google{
+    padding: 15px;
+}
+.google button{
+    border-radius: 8px;
+    border: 1px solid #0A9C7D;
+    color: #0A9C7D;
+    font-weight: 700;
+    margin-left: 10px;
+    gap: 10px;
+    cursor: pointer;
+    background-color: transparent;
+    display: flex;
+    align-items: center;
+    width: 340px;
+    height: 45px;
+    justify-content: center;
+}
+label{
+ margin-right: 250px;
+}
+.or img{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin-left: 10px;
+    padding: 12px;
+    width: 380px;
+}
+.check{
+    width: 40px !important;
+    height: 20px !important;
+}
+.agree{
+    display: flex;
+    font-size: 13px;
+    padding: 10px;
+   line-height: 20px;
+}
+.first-para{
+    color: white;
+    width: 300px;
+    font-size: 20px;
+    line-height:30px;
+}
+.small{
+    line-height:30px;
+}
+.browse{
+    line-height:80px;
+}
+.images{
+    display: flex;
+    gap: 40px;
+}
+.network{
+    line-height: 80px;
+}
+.para{
+    line-height: 80px;
+    font-size: 15px;
 }
